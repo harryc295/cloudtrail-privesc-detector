@@ -1,0 +1,98 @@
+[
+  {
+    "event_time": "2026-06-21T09:00:00+00:00",
+    "event_name": "AttachUserPolicy",
+    "event_source": "iam.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/alice",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIAALICEEXAMPLE0001",
+    "source_ip": "203.0.113.10",
+    "request_parameters": {"userName": "alice", "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"},
+    "response_elements": {},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:05:00+00:00",
+    "event_name": "CreateFunction",
+    "event_source": "lambda.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/alice",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIAALICEEXAMPLE0001",
+    "source_ip": "203.0.113.10",
+    "request_parameters": {"functionName": "data-export", "role": "arn:aws:iam::111122223333:role/LegacyAutomationRole"},
+    "response_elements": {},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:10:00+00:00",
+    "event_name": "AssumeRole",
+    "event_source": "sts.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/charlie",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIACHARLIEEXAMPLE02",
+    "source_ip": "198.51.100.20",
+    "request_parameters": {"roleArn": "arn:aws:iam::111122223333:role/LegacyAutomationRole", "roleSessionName": "charlie-session"},
+    "response_elements": {},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:15:00+00:00",
+    "event_name": "CreateAccessKey",
+    "event_source": "iam.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/dev-lead",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIADEVLEADEXAMPLE03",
+    "source_ip": "203.0.113.10",
+    "request_parameters": {"userName": "bob"},
+    "response_elements": {"accessKey": {"accessKeyId": "AKIABOBSTOLEN0000004", "userName": "bob"}},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:21:00+00:00",
+    "event_name": "ListBuckets",
+    "event_source": "s3.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/bob",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIABOBSTOLEN0000004",
+    "source_ip": "198.51.100.77",
+    "request_parameters": {},
+    "response_elements": {},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:25:00+00:00",
+    "event_name": "CreateAccessKey",
+    "event_source": "iam.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/bob",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIABOBOWNEXAMPLE005",
+    "source_ip": "203.0.113.55",
+    "request_parameters": {},
+    "response_elements": {"accessKey": {"accessKeyId": "AKIABOBOWNEXAMPLE006", "userName": "bob"}},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:30:00+00:00",
+    "event_name": "DescribeInstances",
+    "event_source": "ec2.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/bob",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIABOBOWNEXAMPLE006",
+    "source_ip": "203.0.113.55",
+    "request_parameters": {},
+    "response_elements": {},
+    "error_code": null
+  },
+  {
+    "event_time": "2026-06-21T09:35:00+00:00",
+    "event_name": "AttachRolePolicy",
+    "event_source": "iam.amazonaws.com",
+    "principal_arn": "arn:aws:iam::111122223333:user/dev-lead",
+    "principal_type": "IAMUser",
+    "access_key_id": "AKIADEVLEADEXAMPLE03",
+    "source_ip": "203.0.113.10",
+    "request_parameters": {"roleName": "DeploymentRole", "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"},
+    "response_elements": {},
+    "error_code": "AccessDenied"
+  }
+]
