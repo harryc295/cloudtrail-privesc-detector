@@ -7,6 +7,10 @@ watches real AWS CloudTrail activity for the same known techniques actually
 a timeline of events instead of a static policy snapshot — and ships a
 short incident-response runbook for each alert type.
 
+See also [agent-privilege-mapper](https://github.com/harryc295/agent-privilege-mapper)
+— the same find-the-dangerous-combination idea applied to AI agent tool
+access instead of AWS IAM.
+
 Together they cover both halves of the NIST CSF story for this threat: spot
 the latent risk before it's exploited, and catch it in the act if it is.
 
